@@ -12,9 +12,9 @@ export default function Index () {
         <Text style={styles.text}>Get six chances to guess a 5-letter word.</Text>
       </View>
       <View style={styles.menu}>
-        <Link href={'/game'}>
+        <Link href={'/game'} style={styles.btn} asChild>
           <TouchableOpacity>
-            <Text>Play</Text>
+            <Text style={styles.btnText}>Play</Text>
           </TouchableOpacity>
         </Link>
       </View>
@@ -45,6 +45,25 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontFamily: "FrankRuhlLibre_500Medium",
   },
-  menu: {},
+  menu: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    gap: 10,
+  },
   footer: {},
+  btn: {
+    borderRadius: 30,
+    borderColor: '#000',
+    borderWidth: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '60%',
+    maxWidth: 200,
+  },
+  btnText: {
+    fontSize: 16,
+    fontWeight: 'semibold',
+    color: '#333',
+    padding: 14
+  }
 })
