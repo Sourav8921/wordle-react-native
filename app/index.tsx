@@ -5,21 +5,27 @@ import { Link } from "expo-router";
 
 export default function Index () {
   return (
-    <View style={styles.container}>
-      <View style={styles.header}>
-        <Icon width={100} height={100} />
-        <Text style={styles.title}>Wordle</Text>
-        <Text style={styles.text}>Get six chances to guess a 5-letter word.</Text>
+    <View style={ styles.container }>
+      <View style={ styles.header }>
+        <Icon width={ 100 } height={ 100 } />
+        <Text style={ styles.title }>Wordle</Text>
+        <Text style={ styles.text }>Get six chances to guess a 5-letter word.</Text>
       </View>
-      <View style={styles.menu}>
-        <Link href={'/game'} style={styles.btn} asChild>
+      <View style={ styles.menu }>
+        <Link href={ '/game' } style={ [styles.btn, { backgroundColor: '#000' }] } asChild>
           <TouchableOpacity>
-            <Text style={styles.btnText}>Play</Text>
+            <Text style={ styles.primaryText }>Play</Text>
           </TouchableOpacity>
         </Link>
+        <TouchableOpacity style={ styles.btn }>
+          <Text style={ styles.btnText }>Log in</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={ styles.btn }>
+          <Text style={ styles.btnText }>Subscribe</Text>
+        </TouchableOpacity>
       </View>
-      <View style={styles.footer}>
-        <Text style={styles.text}>Made by Sourav</Text>
+      <View style={ styles.footer }>
+        <Text style={ styles.text }>Made by Sourav</Text>
       </View>
     </View>
   );
@@ -59,6 +65,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: '60%',
     maxWidth: 200,
+  },
+  primaryText: {
+    fontSize: 16,
+    fontWeight: 'semibold',
+    color: '#fff',
+    padding: 14
   },
   btnText: {
     fontSize: 16,
